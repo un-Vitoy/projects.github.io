@@ -1,0 +1,352 @@
+/**
+ * STYLES MINIMALISTES - PALETTE SOBRE
+ * Police unique: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto
+ * Palette: Nuances de gris avec une teinte neutre
+ */
+
+/* ===== RÉINITIALISATION ET VARIABLES GLOBALES ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Couleurs */
+  --color-bg: #fafaf9;
+  --color-text: #1f2937;
+  --color-accent: #424c61;
+  --color-hover: #1a3c73;
+  --color-border: #e5e7eb;
+
+  /* Police (une seule pour tout le site) */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Espacements */
+  --spacing-unit: 1rem;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+
+  /* Transitions fluides pour les feedback au survol */
+  --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* ===== CORPS DU DOCUMENT ===== */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HEADER / BANNIÈRE ===== */
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Effet parallaxe subtil */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Overlay sombre pour garantir la lisibilité du texte */
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.header-name {
+  font-size: clamp(3.5rem, 8vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.header-title {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.header-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.contact-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: border-color 0.3s ease;
+  padding-bottom: 2px;
+}
+
+.contact-link:hover {
+  border-bottom-color: rgba(255, 255, 255, 1);
+}
+
+.contact-separator {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0.5rem;
+}
+
+/* Lien CV en bas du header */
+.cv-link-bottom {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: border-color 0.3s ease;
+  padding-bottom: 2px;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.cv-link-bottom:hover {
+  border-bottom-color: rgba(255, 255, 255, 1);
+}
+
+/* ===== SECTION PROJETS ===== */
+
+.projects-section {
+  flex: 1;
+  padding: 0 3rem 2rem 3rem;
+  padding-top: 2rem;
+  /* Crée un chevauchement avec le header */
+  margin-top: -6rem;
+  position: relative;
+  z-index: 10;
+  /* Dégradé transparent en haut qui laisse voir le header, transition douce vers opaque */
+  background: linear-gradient(
+    to bottom,
+  rgba(0, 00, 00, 0) 0%,
+  rgba(00, 00, 00, 1) 5%,
+  #000000 100%
+  );
+
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 80px auto 0 auto;
+  width: 100%;
+}
+
+/* GRILLE - 2 colonnes */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Sur écrans plus petits (mobile) */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .header {
+    height: 300px;
+  }
+
+  .header-name {
+    font-size: 2rem;
+  }
+
+  .header-title {
+    font-size: 1rem;
+  }
+
+  .projects-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ===== CARTES DE PROJETS ===== */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 0px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border-radius: 2px; /* Bordures très subtiles pour minimalisme */
+  overflow: hidden;
+}
+
+/* FEEDBACK AU SURVOL - Très léger et sobre */
+.project-card:hover {
+  /* Légère ombre pour créer de la profondeur */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  /* Léger déplacement vers le haut */
+  transform: translateY(-2px);
+}
+
+/* Conteneur image */
+.card-image-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: var(--color-border);
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease-in-out;
+}
+
+/* Overlay avec description longue au survol */
+.card-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.card-long-description {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Effet de flou et affichage de la description au survol */
+.project-card:hover .card-image {
+  filter: blur(3px);
+}
+
+.project-card:hover .card-image-overlay {
+  opacity: 1;
+}
+
+/* Contenu textuel de la carte */
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  font-weight: 400;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* ===== TYPOGRAPHIE ===== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-smooth);
+}
+
+a:hover {
+  color: var(--color-hover);
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+/* Améliore la visibilité au focus pour l'accessibilité au clavier */
+.project-card:focus-visible {
+  outline: 2px solid var(--color-hover);
+  outline-offset: 2px;
+}
+
+/* ===== PRINT ===== */
+
+@media print {
+  .header {
+    height: auto;
+  }
+
+  .project-card:hover {
+    box-shadow: none;
+    transform: none;
+  }
+}
