@@ -10,7 +10,7 @@ export const PROFILE_INFO = {
   email: 'vincent.gaston@epitech.eu',
   //phone: '+33 6 12 34 56 78',
   // URL de l'image de bannière (remplacez par votre propre image)
-  bannerImage: '/resources/elden-ring-liurnia.jpg',
+  bannerImage: '/projects/resources/elden-ring-liurnia.jpg',
 };
 
 // Liste des projets affichés dans la grille
@@ -22,7 +22,7 @@ export const PROJECTS = [
     shortDescription: 'Turn-based strategy game inspired by permaculture',
     longDescription: 'Unity indie game prototype, made from 2019 to 2020. I was the lead programmer in a team of 2 to 4 members',
     // URL de l'image de la carte (remplacez par vos images)
-    image: '/resources/ourland title.png',
+    image: '/projects/resources/ourland title.png',
     // Lien Itch.io ou votre lien personnalisé
     link: 'https://melolon.itch.io/our-land',
   },
@@ -31,7 +31,7 @@ export const PROJECTS = [
     title: 'Martyr',
     shortDescription: 'Weird parkour prototype',
     longDescription: 'Solo Unity project made in 2024, I made everything from programming to 3D modeling, textures and shaders',
-    image: '/resources/martyr title.png',
+    image: '/projects/resources/martyr title.png',
     link: 'https://vitoy.itch.io/martyr-demo',
   },
   {
@@ -39,7 +39,7 @@ export const PROJECTS = [
     title: 'CVLT',
     shortDescription: 'Cult management simulator',
     longDescription: 'Unity project made in a week for a game jam in 2021, I was one of the two devs on the project',
-    image: '/resources/cvlt title.png',
+    image: '/projects/resources/cvlt title.png',
     link: 'https://melolon.itch.io/cvlt',
   },
   {
@@ -47,7 +47,7 @@ export const PROJECTS = [
     title: 'Megaflight (No release yet)',
     shortDescription: 'Online arcade wingsuit flying game',
     longDescription: 'Solo Unity project inspired by Superflight. Backend architecture made from scratch in C# .Net',
-    image: '/resources/megaflight title.png',
+    image: '/projects/resources/megaflight title.png',
     link: '',
   },
   /*{

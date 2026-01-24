@@ -26,7 +26,7 @@ function Header() {
         </div> */}
         
         {/* Lien CV en bas */}
-        <a href="/resources/Vincent Gaston Gamedev Resume.pdf" target="_blank" rel="noopener noreferrer" className="cv-link-bottom">
+        <a href="/projects/resources/Vincent Gaston Gamedev Resume.pdf" target="_blank" rel="noopener noreferrer" className="cv-link-bottom">
           View Resume
         </a>
       </div>
